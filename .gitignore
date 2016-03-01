@@ -13,4 +13,5 @@ hs_err_pid*
 
 #mvn 
 /*/*/target/
+TTTService.java.*.java
 
