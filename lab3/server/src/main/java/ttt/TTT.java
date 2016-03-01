@@ -1,6 +1,9 @@
 package ttt;
 
-public class TTT {
+import java.rmi.server.UnicastRemoteObject;
+import java.rmi.RemoteException;
+
+public class TTT extends UnicastRemoteObject implements TTTService {
 	char board[][] = {
 		  {'1','2','3'},          /* Initial values are reference numbers */
 		  {'4','5','6'},          /* used to select a vacant square for   */
@@ -9,6 +12,9 @@ public class TTT {
 	int nextPlayer = 0;
 	int numPlays = 0;
 
+    public TTT() throws RemoteException{
+    }
+	
     public String currentBoard() {
     	String s = "\n\n " + 
     				board[0][0]+" | " +

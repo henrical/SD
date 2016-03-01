@@ -1,6 +1,7 @@
 package ttt;
 
 import java.util.Scanner;
+import java.rmi.RemoteException;
 
 public class Game {
 	TTT ttt;
@@ -9,7 +10,17 @@ public class Game {
 	int player = 1;
 
 	public Game() {
-		ttt = new TTT();
+	
+                try {
+                    ttt = new TTT();
+                }
+                catch(RemoteException excep)
+                {
+                    System.out.println(excep.toString());
+                    System.exit(-1);
+                }
+                
+		
 		keyboardSc = new Scanner(System.in);
 	}
 
@@ -53,9 +64,9 @@ public class Game {
 					winner);
 	}
 
-	public static void main(String[] args) {
-		Game g = new Game();
-		g.playGame();
-		g.congratulate();
-	}
+// 	public static void main(String[] args) {
+// 		Game g = new Game();
+// 		g.playGame();
+// 		g.congratulate();
+// 	}
 }
