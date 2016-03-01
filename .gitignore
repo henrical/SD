@@ -13,5 +13,7 @@ hs_err_pid*
 
 #mvn 
 /*/*/target/
+
+#RMI auto generated
 TTTService.java.*.java
 
